@@ -6,9 +6,21 @@ const testNum = num => {
     }
 }
 
+// const makeAllCaps = array => {
+//   return new Promise((resolve) => {
+//       return resolve(array.map(word => word.toUpperCase()))
+//   })
+// }
+
 const makeAllCaps = array => {
   return new Promise((resolve) => {
-      return resolve(array.map(word => word.toUpperCase()))
+		array.map(word => {
+			if (typeof word === 'string') {
+				resolve(word.toupperCase())
+			}
+
+			reject('You have something in the array that is not a string!')
+		})
   })
 }
 
